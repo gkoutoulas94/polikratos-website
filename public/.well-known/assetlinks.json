@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.polikratosgame.polikratos",
+      "sha256_cert_fingerprints": [
+        "CA:D3:81:8D:A0:FE:27:FC:7F:97:72:A7:A8:8F:26:E0:EE:EE:5A:F0:FB:28:50:37:C6:3B:75:D7:D2:55:A1:07",
+        "20:24:2A:D7:5F:E1:07:65:F7:DC:1D:15:FB:4C:32:50:41:FE:89:4B:DC:34:AE:1C:FF:1D:B3:A3:ED:01:02:30",
+        "08:D8:15:22:73:9A:83:52:EF:15:7B:56:25:09:DB:22:B5:1C:2B:E7:A0:04:B6:E4:69:0D:07:E6:D7:E6:00:DE"
+      ]
+    }
+  }
+]
