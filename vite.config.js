@@ -12,6 +12,8 @@ export default defineConfig({
         terms: resolve(import.meta.dirname, 'terms.html'),
         deletion: resolve(import.meta.dirname, 'delete-account.html'),
         support: resolve(import.meta.dirname, 'support.html'),
+        recovery: resolve(import.meta.dirname, 'reset-password.html'),
+        confirmation: resolve(import.meta.dirname, 'confirm-email.html'),
         notFound: resolve(import.meta.dirname, '404.html')
       }
     }

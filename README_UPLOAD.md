@@ -13,7 +13,7 @@ This is a Vite-powered static website. It needs no database or server-side appli
 
 ## Traditional static upload
 
-1. Upload **the contents of this `website` folder** to the public root of `polikratos.com` (often `public_html`, `www` or the host's deploy folder).
+1. Run `npm ci` and `npm run build`, then upload **the contents of `website/dist`** to the public root of `polikratos.com` (often `public_html`, `www` or the host's deploy folder).
 2. Keep the file and folder names unchanged.
 3. Enable HTTPS and redirect HTTP to HTTPS in your hosting dashboard.
 4. Verify these public URLs:

@@ -1,0 +1,7 @@
+.recovery-shell { max-width: 620px; margin: 40px auto; padding: 16px; }
+.recovery-shell label { display: block; margin: 18px 0 6px; }
+.recovery-shell input { width: 100%; box-sizing: border-box; padding: 14px; border: 1px solid #bba56c; border-radius: 8px; background: #07131f; color: #fff; font: inherit; }
+.recovery-shell button { margin-top: 22px; padding: 14px 22px; border: 0; border-radius: 8px; background: #ecd38a; color: #07131f; font: inherit; cursor: pointer; }
+.recovery-shell button:disabled { opacity: .5; cursor: wait; }
+.recovery-shell :focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+[hidden] { display: none !important; }
