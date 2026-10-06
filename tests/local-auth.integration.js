@@ -4,10 +4,15 @@ import { randomUUID } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
 
-const raw = execFileSync('npx.cmd', ['--yes', 'supabase@2.118.0', 'status', '--output', 'json'], {
-  cwd: '../app/.local-staging', encoding: 'utf8', shell: true, stdio: ['ignore', 'pipe', 'pipe'],
-});
-const settings = JSON.parse(raw);
+let settings;
+try {
+  const raw = execFileSync('npx.cmd', ['--yes', 'supabase@2.118.0', 'status', '--output', 'json'], {
+    cwd: '../app/.local-staging', encoding: 'utf8', shell: true, stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  settings = JSON.parse(raw);
+} catch {
+  throw Error('Start the isolated local staging stack before running this test.');
+}
 const url = settings.API_URL;
 if (!/^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(url)) throw Error('Local Supabase required.');
 const options = { auth: { persistSession: false, autoRefreshToken: false } };
