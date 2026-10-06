@@ -12,14 +12,12 @@ const client = createClient('https://yzsqrdjtvkqnwrueytnf.supabase.co',
     global: { fetch: (url, options = {}) => fetch(url, { ...options, signal: AbortSignal.timeout(20000) }) },
   });
 if (validToken) {
-  // A deliberate action prevents email link scanners from consuming the token.
-  status.textContent = 'One last step: confirm that this email address belongs to you.';
-  button.hidden = false;
+  status.textContent = 'Confirming your email…';
 } else {
   status.textContent = 'This link is missing, invalid or has expired. Request a new confirmation email.';
   document.querySelector('#help').hidden = false;
 }
-button.addEventListener('click', async () => {
+async function confirmEmail() {
   button.disabled = true;
   try {
     const { data, error } = await client.auth.verifyOtp({ token_hash: tokenHash, type: 'signup' });
@@ -37,6 +35,10 @@ button.addEventListener('click', async () => {
     try { await client.auth.signOut({ scope: 'local' }); } catch { /* in-memory only */ }
   } catch {
     status.textContent = 'Could not connect. Please try again.';
+    button.textContent = 'Try again';
+    button.hidden = false;
     button.disabled = false;
   }
-});
+}
+button.addEventListener('click', confirmEmail);
+if (validToken) void confirmEmail();
