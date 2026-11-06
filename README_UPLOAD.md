@@ -28,6 +28,7 @@ This is a Vite-powered static website. It needs no database or server-side appli
 ## Before production
 
 - Confirm that `info@polikratos.com` can receive and answer messages.
-- Add the final Google Play download link when the listing is live.
+- Verify both homepage download buttons reach the published Google Play listing for `com.polikratosgame.polikratos`.
+- Review `docs/WEBSITE_AUDIT_2026_11_06.md`, including unresolved production, consent and legal checks. Deployment requires explicit owner authorization; a local build is not authorization.
 - Review the legal text with a qualified lawyer for the countries where the game will be offered.
 - Update the policy and Play Console Data safety form whenever ads, analytics, payments or new SDKs are added.
